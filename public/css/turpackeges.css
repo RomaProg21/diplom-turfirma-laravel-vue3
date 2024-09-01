@@ -1,0 +1,474 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-size: border-box;
+    user-select: none;
+}
+@font-face{               /*подключение шрифта*/
+    font-family: gothampro;
+    src: url(/fonts/gothampro.ttf); 
+}
+@font-face {
+    font-family: Carattere-Regular;
+    src: url(/fonts/Carattere-Regular.ttf);
+}
+.header{                  /*Сам header*/
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1458px;
+    height: 166px;
+    margin: 0 auto;
+    /*padding: 0 0 0 168px; Для отступа слева*/
+}
+.wallpaper-header{        /*Черная полоса header*/
+    width: 100%;
+    height: 166px;
+    background: rgba(0, 0, 0, 0.13);
+}
+.logo:hover{              /*Увеличение размера логотипа при наведении*/
+    transform: scale(1.01);
+}
+.menu-header li a:not(.button-register){        /*Надписи в header*/
+    text-decoration: none;
+    font-family: 'GothamPro';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    color: #1E1E1E;
+}
+.menu-header{             /*Границы надписи центр header*/
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+.menu-header li{          /*Расстояние между надписями центр header*/
+    margin-left: 47px;
+}
+.header-register li{      /*Расстояние между надписями регистр header*/
+    margin-left: 31px;
+}
+.menu-header li.last{     /*Расстояние между надписями для последнего элемента 0*/
+    margin-left: 0px;
+}
+.header-register li ul li{   /*Позиционирование и отступы Eng*/
+    padding: 10px 20px 0 0;
+    position: absolute;
+}
+.header-register li ul{   /*Уборка маркера и невидимость объекта Eng*/
+    list-style: none;
+    display: none;
+}
+.header-register li:hover > ul{   /*Появление Eng при наведении*/
+    display: initial;
+}
+.button-register{         /*Кнопка регистрации*/
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+    background: #FF8A00;
+    border-radius: 50px;
+    padding: 20px 27px;
+    text-decoration: none;
+    font-family: 'GothamPro';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    color: #FFF;
+}
+.button-register:hover{    /*Кнопка регистрации при наведении*/
+    background: #FFFFFF;
+    color: #FF8A00;
+    border-bottom: 1px solid #FF8A00;
+    border-top: 1px solid #FF8A00;
+    border-right: 1px solid #FF8A00;
+    border-left: 1px solid #FF8A00;
+    padding: 19px 26px;
+}
+
+.menu-header li:hover:not(.background-register){    /*При наведение кнопка поднимается на 1 пикель вверх в header, кроме кнопки регистрации*/
+    transform: translate(0px, -1px) rotate(0deg);
+    transition: all 0.1s ease-in-out;
+}
+.menu-header li a:hover:not(.profile_avatar){  /*При наведение появляется нижняя полоса в header*/
+    border-bottom: 3px solid #FF8A00;
+}
+.button_back{
+    margin: 38px auto 54px auto;
+    max-width: 1450px;
+    a{
+        text-decoration: none;
+        font-family: 'GothamPro';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        color: rgba(0, 0, 0, 0.5);
+        line-height: 104%;
+        letter-spacing: 0.005em;
+    }
+}
+.found_tours{
+    width: 1082px;
+    margin-right: 28px;
+}
+.found_tour{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+.main_information_tour{
+    display: flex;
+    
+}
+.photos_tour{
+    border-radius: 25px;
+    height: 330px;
+    width: 267px;
+}
+.information_tour{
+    padding: 19px 0 0 28px;
+    h1{
+        font-family: 'GothamPro';
+        font-style: bold;
+        font-weight: 900;
+        font-size: 28px;
+        color: rgba(0, 0, 0);
+        line-height: 104%;
+        letter-spacing: 0.005em;
+        text-shadow: 1px 1px 1px #000;
+    }
+}
+.parametrs{
+    display: flex;
+    align-items: center;
+    padding-top: 25px;
+    h3{
+        font-family: 'GothamPro';
+        font-style: bold;
+        font-weight: 900;
+        font-size: 16px;
+        color: rgba(0, 0, 0);
+        line-height: 104%;
+        letter-spacing: 0.005em;
+    }
+    img{
+        padding-right: 10px;
+    }
+}
+.action_tour{
+    h3{
+        font-family: 'GothamPro';
+        font-style: bold;
+        font-weight: 900;
+        font-size: 24px;
+        color: rgba(0, 0, 0);
+        line-height: 104%;
+        letter-spacing: 0.005em;
+        padding: 66px 0 20px 20%;
+    }
+    img{
+        padding: 19px 0 0 196px;
+        cursor: pointer;
+    }
+}
+.look_tour{
+    background: #FFF;
+    border-radius: 50px;
+    color: #FF8A00;
+    border-bottom: 2px solid #FF8A00;
+    border-top: 2px solid #FF8A00;
+    border-right: 2px solid #FF8A00;
+    border-left: 2px solid #FF8A00;
+    padding: 19px 46px;
+    font-family: 'GothamPro';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 16px;
+    cursor: pointer;
+}
+.gorizont_line_tour{
+    margin: 28px 0;
+    width: 100%;
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.25);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.profile_title{
+    width: 1450px;
+    margin: 0 auto;
+    h1{
+        font-family: 'GothamPro';
+        font-style: bold;
+        font-weight: 900;
+        font-size: 34px;
+        color: rgba(0, 0, 0);
+        line-height: 104%;
+        letter-spacing: 0.005em;
+        text-shadow: 1px 1px 1px #000;
+    }
+    h3{
+        font-family: 'GothamPro';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        color: rgba(0, 0, 0, 0.5);
+        line-height: 104%;
+        letter-spacing: 0.005em;
+        margin: 16px 0 50px 0;
+    }
+}
+.blog_search{
+    display: flex;
+    max-width: 1450px;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding-bottom: 49px;
+}
+.vert_line_left{
+    height: 1302px;
+    width: 1px;
+    background-color: rgba(0, 0, 0, 0.25);
+}
+.filters_tour{
+    width: 340px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+}
+.gorizont_line{
+    width: 280px;
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.25);
+}
+.title_filters{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: 28px 0;
+    h1{
+        font-family: 'GothamPro';
+        font-style: bold;
+        font-weight: 900;
+        font-size: 24px;
+        color: rgba(0, 0, 0);
+        line-height: 104%;
+        letter-spacing: 0.005em;
+        text-shadow: 1px 1px 1px #000;
+    }
+    h3{
+        font-family: 'GothamPro';
+        font-style: bold;
+        font-weight: 400;
+        font-size: 16px;
+        color: rgba(0, 0, 0, 0.5);
+        line-height: 104%;
+        letter-spacing: 0.005em;
+    }
+}
+.close_filters{
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    img{
+        padding-left: 5px;
+        height: 15px;
+        width: 15px;
+    }
+}
+.filters_menu{
+    padding: 28px 0;
+    h1{
+        font-family: 'GothamPro';
+        font-style: bold;
+        font-weight: 900;
+        font-size: 20px;
+        color: rgba(0, 0, 0);
+        line-height: 104%;
+        letter-spacing: 0.005em;
+        text-shadow: 1px 1px 1px #000;
+        padding-bottom: 30px;
+    }
+}
+.cell-label { 
+    font-family: 'GothamPro';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    color: rgb(30, 30, 30, 0.9);
+    cursor: pointer;
+    padding: 0 0 0 25px;
+}
+.cell-value {
+    position: relative;
+    margin-top: 7px;
+}
+.personal_info_input{
+    justify-self: center;
+    width: 250px;
+    height: 51px;
+    border-radius: 25px;
+    border-color: rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+    font-family: 'GothamPro';
+    font-weight: 800;
+    font-style: bold;
+    font-size: 16px;
+    color: rgba(0, 0, 0);
+    border-width: 2px;
+    padding-left: 25px;
+    line-height: 104%;
+    letter-spacing: 0.005em;
+}
+.personal_info_select{
+    justify-self: center;
+    width: 280px;
+    height: 55px;
+    border-radius: 25px;
+    border-color: rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+    font-family: 'GothamPro';
+    font-weight: 800;
+    font-style: bold;
+    font-size: 16px;
+    color: rgba(0, 0, 0);
+    border-width: 2px;
+    padding-left: 25px;
+    line-height: 104%;
+    letter-spacing: 0.005em;
+}
+.personal_info_input:hover, .personal_info_select:hover{                 /*Логин и Пароль вид при наведении*/
+    border-color: #FF8A00;
+}
+.personal_info_input:focus, .personal_info_select:focus{                /*Логин и Пароль вид при нажатии*/
+    outline: #FF8A00;
+    border-color: #FF8A00;
+}
+.cell-value span {
+    position: absolute;
+    top: 36%;
+    right: 15px;
+    visibility: hidden; /* Изначально скрываем span */
+}
+.personal_info_input:focus + span {
+    visibility: visible; /* Показываем span при наведении на input */
+}
+input[type="date"]::-webkit-calendar-picker-indicator {
+    display: none;
+}
+.filters_price{
+    width: 108px;
+}
+.prices_inputs{
+    display: flex;
+    justify-content: space-between;
+}
+.enter_filters{
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+    background: #FF8A00;
+    border-radius: 50px;
+    padding: 22px 45px;
+    border: none;
+    text-decoration: none;
+    font-family: 'GothamPro';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    color: #FFFFFF;
+    cursor: pointer;
+    margin-top: 28px;
+}
+.footer_menu{
+    width: 100%;
+    height: 528px;
+    background-color: rgba(30, 30, 30, 0.9);
+}
+.footer{
+    padding: 34px 0 34px 0;
+    margin: 0 auto;
+    max-width: 1450px;
+}
+.end_logo a img{
+    height: 110px;
+    width: 148px;
+    margin-bottom: 27px;
+}
+.end_line{
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+.end_menu{
+    height: 268px;
+    max-width: 1270px;
+    margin:0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr auto;
+}
+.footer_navigation{
+    padding-top: 34px;
+    h4{
+        font-family: 'GothamPro';
+        font-style: bold;
+        font-weight: 900;
+        font-size: 24px;
+        color: #FFF;
+        line-height: 104%;
+        letter-spacing: 0.005em;
+        padding-bottom: 36px;
+    }
+    ul{
+        list-style: none;
+    }
+}
+.footer_navigation_in li{
+    padding-bottom: 20px;
+    text-decoration: none;
+    font-family: 'GothamPro';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    color: #FFF;
+    line-height: 104%;
+    letter-spacing: 0.005em;
+}
+.footer_navigation_in li a{
+    text-decoration: none;
+    font-family: 'GothamPro';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    color: #FFF;
+    line-height: 104%;
+    letter-spacing: 0.005em;
+}
+.footer h3{
+    font-family: 'GothamPro';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    color: #FFFFFF;
+    line-height: 104%;
+    letter-spacing: 0.005em;
+    margin-top: 34px;
+    text-align: center;
+}
+.social{
+    display: flex;
+    justify-content: space-between;
+}
+.social a img:hover{
+    -webkit-filter: brightness(93%)
+}

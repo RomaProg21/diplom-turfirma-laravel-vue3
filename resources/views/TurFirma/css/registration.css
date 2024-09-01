@@ -1,0 +1,513 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-size: border-box;
+    user-select: none;
+}
+@font-face{               /*подключение шрифта*/
+    font-family: gothampro;
+    src: url(/fonts/gothampro.ttf); 
+}
+@font-face {
+    font-family: Carattere-Regular;
+    src: url(/fonts/Carattere-Regular.ttf);
+}
+.header{                  /*Сам header*/
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1458px;
+    height: 166px;
+    margin: 0 auto;
+    /*padding: 0 0 0 168px; Для отступа слева*/
+}
+.wallpaper-header{        /*Черная полоса header*/
+    width: 100%;
+    height: 166px;
+    background: rgba(0, 0, 0, 0.13);
+}
+.logo:hover{              /*Увеличение размера логотипа при наведении*/
+    transform: scale(1.01);
+}
+.menu-header li a:not(.button-register){        /*Надписи в header*/
+    text-decoration: none;
+    font-family: 'GothamPro';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    color: #1E1E1E;
+}
+.menu-header{             /*Границы надписи центр header*/
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+.menu-header li{          /*Расстояние между надписями центр header*/
+    margin-left: 47px;
+}
+.header-register li{      /*Расстояние между надписями регистр header*/
+    margin-left: 31px;
+}
+.menu-header li.last{     /*Расстояние между надписями для последнего элемента 0*/
+    margin-left: 0px;
+}
+.header-register li ul li{   /*Позиционирование и отступы Eng*/
+    padding: 10px 20px 0 0;
+    position: absolute;
+}
+.header-register li ul{   /*Уборка маркера и невидимость объекта Eng*/
+    list-style: none;
+    display: none;
+}
+.header-register li:hover > ul{   /*Появление Eng при наведении*/
+    display: initial;
+}
+.button-register{         /*Кнопка регистрации*/
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+    background: #FF8A00;
+    border-radius: 50px;
+    padding: 20px 27px;
+    text-decoration: none;
+    font-family: 'GothamPro';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    color: #FFF;
+}
+.button-register:hover{    /*Кнопка регистрации при наведении*/
+    background: #FFFFFF;
+    color: #FF8A00;
+    border-bottom: 1px solid #FF8A00;
+    border-top: 1px solid #FF8A00;
+    border-right: 1px solid #FF8A00;
+    border-left: 1px solid #FF8A00;
+    padding: 19px 26px;
+}
+
+.menu-header li:hover:not(.background-register){    /*При наведение кнопка поднимается на 1 пикель вверх в header, кроме кнопки регистрации*/
+    transform: translate(0px, -1px) rotate(0deg);
+    transition: all 0.1s ease-in-out;
+}
+.menu-header li a:hover:not(.button-register){  /*При наведение появляется нижняя полоса в header*/
+    border-bottom: 3px solid #FF8A00;
+}
+.button_back{
+    margin: 38px auto 54px auto;
+    max-width: 1450px;
+    a{
+        text-decoration: none;
+        font-family: 'GothamPro';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        color: rgba(0, 0, 0, 0.5);
+        line-height: 104%;
+        letter-spacing: 0.005em;
+    }
+}
+.registration{
+    max-width: 1450px;
+    padding-bottom: 49px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+}
+.registration_component{
+    h1{
+        font-family: 'GothamPro';
+        font-style: bold;
+        font-weight: 900;
+        font-size: 34px;
+        color: rgba(0, 0, 0);
+        line-height: 104%;
+        letter-spacing: 0.005em;
+        text-shadow: 1px 1px 1px #000;
+    }
+    h3{
+        font-family: 'GothamPro';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        color: rgba(0, 0, 0, 0.5);
+        line-height: 104%;
+        letter-spacing: 0.005em;
+        margin: 16px 0;
+    }
+}
+.registration_forma{
+    display: grid;
+    row-gap: 12px;
+    justify-self: center;
+    input{
+        width: 480px;
+        height: 75px;
+        border-radius: 25px;
+        border-color: rgba(0, 0, 0, 0.25);
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+        font-family: 'GothamPro';
+        font-weight: 400;
+        font-style: normal;
+        font-size: 18px;
+        color: rgba(0, 0, 0);
+        border-width: 2px;
+        padding-left: 25px;
+    }
+}
+.registration_forma input:hover{                 /*Логин и Пароль вид при наведении*/
+    border-color: #FF8A00;
+}
+.registration_forma input:focus {                /*Логин и Пароль вид при нажатии*/
+    outline: #FF8A00;
+    border-color: #FF8A00;
+}
+.clue {                                          /*Проверка на заполнение поле ввода*/
+    position: relative;
+    display: inline-block;
+    padding-left: 10px;
+    border-radius: 25px;
+    cursor: pointer;
+    user-select: none;
+    transition: all .09s ease-out;
+    &:before {
+      content: attr(data-clue);
+      position: absolute;
+      bottom: 100%;
+      left: 50%;
+      font-family: 'GothamPro';
+      font-weight: 400;
+      font-style: normal;
+      font-size: 18px;
+      text-align: center;
+      transform: translateX(-50%);
+      color: white;
+      padding: 10px 14px;
+      background-color: #FF8A00;
+      width: 180px;
+      border-radius: 25px;
+      font-size: 16px;
+      visibility: hidden;
+      z-index: -1;
+      opacity: 0;
+      transition: inherit;
+    }
+    &:hover {
+      &:before {
+        opacity: 1;
+        visibility: visible;
+        z-index: 10;
+        bottom: calc( 100% + 10px );
+      }
+    }
+  }
+.registration_settings{
+    display: grid;
+    row-gap: 16px;
+    margin: 38px 4%;
+}
+.registration_settings span{
+    font-family: 'GothamPro';
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+    color: #1E1E1E;
+    line-height: 104%;
+    letter-spacing: 0.005em;
+}
+.custom_checkbox_registration{                /*Кастомизация чекбокса*/
+    vertical-align: middle;
+    position: relative;
+    bottom: 2px;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 1px solid #FFA500;
+    border-radius: 2px;
+    margin-right: 5px;
+}
+.remember_me:checked + .custom_checkbox_registration::after {     /* Изменение внешнего вида чекбокса при его выборе */
+    content:'';
+    width: 4px;
+    height: 11px;
+    border: 2px solid #FFA500;
+    border-width: 0 2px 3px 0;
+    position: absolute;
+    left: 5px;
+    transform: rotate(45deg);
+}
+.button_registration{
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+    background: #FF8A00;
+    border-radius: 50px;
+    padding: 23px 40px;
+    border: none;
+    text-decoration: none;
+    font-family: 'GothamPro';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+.button_registration:hover{
+    -webkit-filter: brightness(93%)
+}
+.registration_img{
+    height: 827px;
+    width: 674px;
+    background: url(/photos/registration_img.svg) center center no-repeat;
+}
+.registration_vector{
+    background: url(/photos/Vector2.svg) center center no-repeat;
+    text-align: center;
+    height: 230px;
+    margin-top: 50%;
+    h1{
+        font-family: 'Carattere-Regular';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 50px;
+        line-height: 104%;
+        letter-spacing: 0.005em;
+        color: #FFFFFF;
+        -webkit-text-stroke: 2.5px;
+        padding-top: 63px;
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+    }
+}
+.footer_menu{
+    width: 100%;
+    height: 528px;
+    background-color: rgba(30, 30, 30, 0.9);
+}
+.footer{
+    padding: 34px 0 34px 0;
+    margin: 0 auto;
+    max-width: 1450px;
+}
+.end_logo a img{
+    height: 110px;
+    width: 148px;
+    margin-bottom: 27px;
+}
+.end_line{
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+.end_menu{
+    height: 268px;
+    max-width: 1270px;
+    margin:0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr auto;
+}
+.footer_navigation{
+    padding-top: 34px;
+    h4{
+        font-family: 'GothamPro';
+        font-style: bold;
+        font-weight: 900;
+        font-size: 24px;
+        color: #FFF;
+        line-height: 104%;
+        letter-spacing: 0.005em;
+        padding-bottom: 36px;
+    }
+    ul{
+        list-style: none;
+    }
+}
+.footer_navigation_in li{
+    padding-bottom: 20px;
+    text-decoration: none;
+    font-family: 'GothamPro';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    color: #FFF;
+    line-height: 104%;
+    letter-spacing: 0.005em;
+}
+.footer_navigation_in li a{
+    text-decoration: none;
+    font-family: 'GothamPro';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    color: #FFF;
+    line-height: 104%;
+    letter-spacing: 0.005em;
+}
+.footer h3{
+    font-family: 'GothamPro';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    color: #FFFFFF;
+    line-height: 104%;
+    letter-spacing: 0.005em;
+    margin-top: 34px;
+    text-align: center;
+}
+.social{
+    display: flex;
+    justify-content: space-between;
+}
+.social a img:hover{
+    -webkit-filter: brightness(93%)
+}
+.login-popup{                      /*Форма Авторизации*/ 
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    width: 490px;
+    height: 550px;
+    border-radius: 25px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+.login_header{                     /*Хедер формы авторизации*/
+    background: url(/photos/login_header.svg);
+    height: 150px;
+    background-size: cover;
+    text-align: center;
+}
+.popup-title{                     /*Заголовок в окне авторизации*/
+    text-decoration: none;
+    font-family: 'GothamPro';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 38px;
+    color: #FFFFFF;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+    padding: 36px 0 0 0;
+}
+.popup-content{                       /*Выравниванеи текста по середине*/
+    text-align: center;
+    a{
+        text-decoration: none;        /*Вид ссылок*/
+        font-family: 'GothamPro';
+        font-weight: 400;
+        font-style: normal;
+        font-size: 14px;
+        color: #FF8A00;
+    }
+    span{                              /*Вид текста другого*/
+        font-family: 'GothamPro';
+        font-weight: 400;
+        font-style: normal;
+        font-size: 14px;
+        color: #000000; 
+    }
+}
+.close {                         /*Кнопка закрытия окна авторизации*/
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    background-image: url(/photos/login_close_btn.svg);
+    height: 20px;
+    width: 20px;
+}
+.string3 {                      /*Надпись "Заполните поля" в окне авторизации*/
+    font-family: 'GothamPro';
+    font-weight: 600;
+    font-style: normal;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.5);
+    height: 31px;
+    padding: 4px 0 0 0;
+}
+.login_form{                    /*Форма для вводных элементов авторизации (Логин и Пароль)*/
+    display: grid;
+    row-gap: 16px;
+    justify-self: center;
+}
+.login_form input{                       /*Логин и Пароль вид*/
+    justify-self: center;
+    width: 321px;
+    height: 56px;
+    border-radius: 25px;
+    border-color: rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+    font-family: 'GothamPro';
+    font-weight: 400;
+    font-style: normal;
+    font-size: 18px;
+    color: rgba(0, 0, 0);
+    border-width: 2px;
+    padding-left: 25px;
+}
+.login_form input:hover{                 /*Логин и Пароль вид при наведении*/
+    border-color: #FF8A00;
+}
+.login_form input:focus {                /*Логин и Пароль вид при нажатии*/
+    outline: #FF8A00;
+    border-color: #FF8A00;
+}
+.password_settings{
+    padding: 16px 0 26px 0;
+    justify-content: space-between;
+    display: flex;
+    margin: 0 16%;
+}
+.label_remember_me {                   /*Появление курсора при наведение на чекбоск "Запомнить меня"*/
+    cursor: pointer;
+}
+.remember_me{                         /*Убираем стандартный вид чекбокса*/
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+.custom_checkbox {                /*Кастомизация чекбокса*/
+    vertical-align: middle;
+    position: relative;
+    bottom: 1px;
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border: 1px solid #FFA500;
+    border-radius: 2px;
+}
+.remember_me:checked + .custom_checkbox::after {     /* Изменение внешнего вида чекбокса при его выборе */
+    content:'';
+    width: 2px;
+    height: 7px;
+    border: 2px solid #FFA500;
+    border-width: 0 2px 3px 0;
+    position: absolute;
+    left: 4px;
+    transform: rotate(45deg);
+}
+.button-log-in{                      /*Кнопка Войти*/
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+    background: #FF8A00;
+    border-radius: 50px;
+    padding: 19px 102px;
+    border: none;
+    text-decoration: none;
+    font-family: 'GothamPro';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+.button-log-in:hover{              /*Затемнение кнопки "Войти" при наведение*/
+    -webkit-filter: brightness(95%)
+}
+.maybe_registration{            /*Отступ фразы "Еще нет аккаунта? Зарегистрируйся!"*/
+    padding: 23px 0 0 0;
+}
+.overlay {                  /*Затемнение экрана*/
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    display: none;
+}
